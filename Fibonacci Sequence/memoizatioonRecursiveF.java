@@ -55,3 +55,35 @@ public class fibNumbers {
 
     }
 }
+
+
+// My best version
+
+import java.util.HashMap;
+
+public class fibNumbers {
+
+    public static Long fibonacci(long n, HashMap<Long, Long> memo) {
+        if (n == 0) return (long) 0;
+        if (n == 1) return (long) 1;
+
+        if (memo.containsKey(n))
+            return memo.get(n);
+        //memo.put(n, fibonacci(n - 1, memo) + fibonacci(n - 2, memo));
+        //return memo.get(n);
+        Long fibForN = fibonacci(n-1,memo) + fibonacci(n-2,memo);
+        memo.put(n, fibForN);  // you can use upper two line both are same.
+
+        return fibForN;
+
+    }
+
+    public static void main(String[] args){
+        HashMap<Long, Long> memo = new HashMap<>();
+        System.out.println(fibonacci(6, memo));
+        System.out.println(fibonacci(7, memo));
+        System.out.println(fibonacci(8, memo));
+        System.out.println(fibonacci(50, memo));
+    }
+}
+
