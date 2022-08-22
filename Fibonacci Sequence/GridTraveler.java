@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 public class GridTraveler {
     public static Long gridTraveler(long m, long n, HashMap<String, Long> memo) {
-        String key = "" + m + " " + n;
+        String key = m + "," + n;
 
         if (m == 1 || n == 1) return (long) 1;
         if (m == 0 || n == 0) return (long) 0;
