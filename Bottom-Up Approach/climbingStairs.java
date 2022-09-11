@@ -4,21 +4,20 @@
 class Solution {
 
     public int climbStairs(int n) {
-        int pre = 1;
-        int curr = 1;
-        int temp = 0;
+        int one = 1;
+        int two = 1;
 
         for (int i = 1; i < n; i++) {
-            temp = curr;
-            curr = curr + pre;
-            pre = temp;
+            int temp = one;
+            one = one + two;
+            two = temp;
         }
-        return curr;
+        return one;
     }
 
     public static void main(String[] args) {
         Solution ob = new Solution();
 
-        System.out.println(ob.climbStairs(4));
+        System.out.println(ob.climbStairs(5));
     }
 }
